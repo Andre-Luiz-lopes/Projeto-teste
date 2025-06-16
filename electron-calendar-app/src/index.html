@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Quora Agenda</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="logo">Quora <span>Agenda</span></div>
+    <nav>
+      <button id="add-event-btn">+ Evento</button>
+      <button id="add-alarm-btn">+ Alarme</button>
+      <button id="add-repeat-alarm-btn">+ Alarme Recorrente</button>
+      <button id="add-note-btn">+ Nota</button>
+      <button id="toggle-theme-btn" title="Alternar tema">🌙</button>
+    </nav>
+  </header>
+  <main>
+    <aside class="sidebar">
+      <div class="calendar-container" id="calendar"></div>
+      <div class="important-days">
+        <h3>Dias Importantes</h3>
+        <ul id="important-days-list"></ul>
+      </div>
+    </aside>
+    <section class="content">
+      <div class="panel" id="events-list"></div>
+      <div class="panel" id="alarms-list"></div>
+      <div class="panel" id="notes-list">
+        <h2>Notas</h2>
+        <div class="note">
+          <div>Nota de exemplo</div> <em>(Data da nota)</em>
+          <button class="delete-btn" data-type="note" data-idx="0" title="Apagar nota">🗑️</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    © 2025 Quora. Todos os direitos reservados.
+  </footer>
+
+  <!-- Modal para adicionar itens -->
+  <div id="modal-bg" class="modal-bg" style="display:none;">
+    <div class="modal">
+      <h2 id="modal-title"></h2>
+      <form id="modal-form">
+        <div id="modal-fields"></div>
+        <div class="modal-actions">
+          <button type="submit" id="modal-save">Salvar</button>
+          <button type="button" id="modal-cancel">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+ <audio id="alarm-audio" src="styles/sons/alarmesong.mp3" preload="auto"></audio>
+  <script src="renderer.js" defer></script>
+</body>
+</html>
